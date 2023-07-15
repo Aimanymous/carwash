@@ -1,0 +1,89 @@
+.loading-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #EEF0F4;
+    color: #438D13;
+}
+
+
+.loading-rectangles {
+    display: flex;
+    justify-content: space-between;
+    width: 80px;
+}
+
+.loading-rectangle {
+    width: 8px;
+    height: 32px;
+    border-radius: 4px;
+    background-color: #438D13;
+    animation: loading-rectangle 1.2s ease-in-out infinite;
+}
+
+.loading-rectangle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.loading-rectangle:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+.loading-text {
+    font-size: 24px;
+    margin-top: 16px;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+}
+
+.loading-text:after {
+    content: "BASUH";
+    animation: loading-text 3s ease-in-out infinite;
+}
+
+@keyframes loading-rectangle {
+    0% {
+        transform: scaleY(0.1);
+    }
+
+    20% {
+        transform: scaleY(1.0);
+    }
+
+    40% {
+        transform: scaleY(0.1);
+    }
+}
+
+@keyframes loading-text {
+    0% {
+       
+        content: "Basuh";
+    }
+
+    25% {
+       
+        content: "Basuh.";
+    }
+
+    50% {
+      
+        content: "Basuh..";
+    }
+
+    75% {
+      
+        content: "Basuh...";
+    }
+
+    100% {
+      
+        content: "Basuh";
+    }
+}

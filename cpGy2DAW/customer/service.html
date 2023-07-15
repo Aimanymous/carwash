@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Service Appointment</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    
+    <style>
+      /* Add some basic styles to make the page look nicer */
+         body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+      }
+      form {
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+        padding: 20px;
+        width: 400px;
+        margin: 50px auto;
+      }
+      label, select, input {
+        display: block;
+        margin-bottom: 10px;
+      }
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        margin-top: 20px;
+      }
+      input[type="submit"]:hover {
+        background-color: #3e8e41;
+      }
+      .home-button {
+        padding: 10px 20px;
+        background-color: #3498db;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+        border-radius: 4px;
+        font-size: 16px;
+        transition: background-color 0.3s ease;
+        float: right; /* Add this line to align the button to the right */
+      }
+      .home-button:hover {
+        background-color: #45a049;
+      }
+      .popup-image {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.7);
+        z-index: 9999;
+        
+        justify-content: center;
+        align-items: center;
+      }
+      .popup-image img {
+        max-width: 100%;
+        height: auto;
+        max-height: 80vh;
+        object-fit: contain;
+      }
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        color: #fff;
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+      }
+            .service-button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: white;
+        color: black;
+        border: none;
+        cursor: pointer;
+      }
+      .service-button:hover {
+        background-color: #737373;
+      }
+
+    </style>
+  </head>
+  <body>
+      
+    <form action="detailappoint.html" method="post" >
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+     <button id="home-button" class="home-button"><i class="fas fa-home"></i></button>
+<h1>Service Appointment</h1>
+    
+      <label for="carwashcentre">Car Wash Centre:</label>
+      <select id="carwashcentre" name="carwashcentre" required>
+        <option value="">Please select</option>
+        <option value="Basuh1">BASUH</option>
+      </select>
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required>
+      <label for="time">Time: </label>
+      <select id="time" name="time">
+       
+   </select>
+   <p id="time-slot-message"></p>
+
+      <label for="addons">addons:</label>
+      <select id="addons" name="addons">
+        <option value="">None</option>
+        <option value="Detailing-services">Detailing services</option>
+        <option value="Oil-change-services">Oil change services</option>
+        <option value="Tires-services">Tires services</option>
+      </select>
+       <button id="add-servive">book</button>
+       
+    </form>
+    <button class="service-button" onclick="showImagePopup('packages-image')">
+      View Packages
+    </button>
+     <script src="service.js" type="module" ></script>
+     <div id="packages-image" class="popup-image">
+      <img src="WASH.png" alt="Packages Image">
+      <button class="close-button" onclick="closeImagePopup('packages-image')">&times;</button>
+
+    </div>
+     
+        <script>
+  function showImagePopup(popupId) {
+        const popup = document.getElementById(popupId);
+        popup.style.display = 'flex';
+      }
+
+      function closeImagePopup() {
+        const popup = document.getElementById('packages-image');
+        popup.style.display = 'none';
+      }
+  </script>
+  </body>
+</html>

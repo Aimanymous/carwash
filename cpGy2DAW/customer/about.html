@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html>
+<head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="customer/style.css">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us | BASUH</title>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <style>
+    /* Add some basic styles to make the page look nicer */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #438D13;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bold;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 600px;
+      margin: 20px auto;
+    }
+
+    th, td {
+      padding: 8px;
+      text-align: left;
+      border-bottom: 1px solid #cccccc;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    h1 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 24px;
+      padding: 0 10px;
+    }
+
+    p {
+      text-align: justify;
+      margin-top: 20px;
+      padding: 0 10px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 20px;
+    }
+
+    .home-link {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #3498db;
+      color: #ffffff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-size: 18px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      z-index: 1;
+    }
+
+    .home-link i {
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: 5px;
+    }
+
+    /* Chatbox styles */
+    .modal-dialog {
+      margin-top: 100px;
+    }
+
+    .modal-content {
+      border-radius: 0;
+    }
+
+    .modal-header {
+      background-color: #438D13;
+      border-radius: 0;
+      color: #ffffff;
+    }
+
+    .modal-title {
+      color: #ffffff;
+    }
+
+    .modal-body {
+      max-height: 400px;
+      overflow-y: auto;
+    }
+
+    .message-container {
+      margin-bottom: 20px;
+    }
+
+    .user-message {
+      background-color: #438D13;
+      color: #ffffff;
+      padding: 10px 15px;
+      border-radius: 15px 15px 0 15px;
+      display: inline-block;
+      max-width: 70%;
+    }
+
+    .assistant-message {
+      background-color: #f2f2f2;
+      color: #000000;
+      padding: 10px 15px;
+      border-radius: 15px 15px 15px 0;
+      display: inline-block;
+      max-width: 70%;
+    }
+
+    .chat-input-container {
+      margin-top: 20px;
+    }
+
+    .chat-input {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #cccccc;
+    }
+
+    .chat-input:focus {
+      outline: none;
+      border-color: #438D13;
+    }
+
+    .send-button {
+      margin-top: 10px;
+      text-align: right;
+    }
+
+    .btn-primary {
+      background-color: #438D13;
+      border-color: #438D13;
+    }
+
+    .btn-primary:hover, .btn-primary:focus {
+      background-color: #306A0E;
+      border-color: #306A0E;
+    }
+
+    /* Rating section styles */
+    .rating-section {
+      text-align: center;
+      margin-top: 30px;
+      padding: 0 10px;
+    }
+
+    .rating-title {
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .rating-input {
+      display: none;
+    }
+
+    .rating-label {
+      display: inline-block;
+      cursor: pointer;
+      color: #cccccc;
+      font-size: 40px;
+      transition: color 0.3s;
+    }
+
+    .rating-label:hover, .rating-label:hover ~ .rating-label, .rating-input:checked ~ .rating-label {
+      color: #f2b600;
+    }
+
+    .rating-label:hover:before, .rating-label:hover ~ .rating-label:before, .rating-input:checked ~ .rating-label:before, .rating-label:hover ~ .rating-label:before, .rating-input:checked ~ .rating-label:before {
+      content: '\2605';
+      position: absolute;
+      transition: color 0.3s;
+    }
+
+    .rating-comment {
+      width: 100%;
+      padding: 10px;
+      margin-top: 20px;
+      border-radius: 5px;
+      border: 1px solid #cccccc;
+      resize: vertical;
+    }
+
+    .rating-comment:focus {
+      outline: none;
+      border-color: #438D13;
+    }
+
+    .submit-rating {
+      margin-top: 20px;
+      text-align: right;
+    }
+    .modal-dialog {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  </style>
+</head>
+<body>
+<header>BASUH</header>
+  <h1>About Us</h1>
+  <p>
+    We're a mobile app that lets you schedule a car wash or other service in advance. Our revolutionary approach is
+    based on a user-friendly interface and tight integration with top-tier vehicle wash facilities.
+  </p>
+  <p>
+    Our ultimate goal is to make washing cars easier for everyone. Our app can help if you're in a hurry, don't want
+    to leave work, or don't want to hunt for a vehicle wash.
+  </p>
+  <p>
+    Find a car wash near you, compare prices, and schedule an appointment with ease with our convenient app. The app's
+    notifications of any changes to the status are instantaneous.
+  </p>
+  <p>
+    In an effort to better serve our customers, we are constantly looking for new avenues of growth. Our car wash
+    appointment software is reliable and easy to use.
+  </p>
+
+
+<h2>Contact Us</h2>
+<table>
+  <tr>
+    <td>Phone</td>
+    <td>0112233445</td>
+  </tr>
+  <tr>
+    <td>Email</td>
+    <td>basuh@gmail.com</td>
+  </tr>
+  <tr>
+    <td>Instagram</td>
+    <td>@basuh_official</td>
+  </tr>
+</table>
+
+<!-- Add the chatbox section -->
+<a href="/" class="home-link"><i class="fas fa-home"></i>Home</a>
+<!-- Add the chat button -->
+<button id="chatButton" class="chat-button" data-toggle="modal" data-target="#chatModal">
+  <i class="fas fa-comment"></i> Chat with Us
+</button>
+<!-- Add the chatbox section -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chatModalLabel">Chat with us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="chatContainer"></div>
+        <div class="chat-input-container">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." autocomplete="off">
+          <div class="send-button">
+            <button id="sendButton" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add the chatbox section -->
+<div class="modal fade" id="chatModal" tabindex="-1" role="dialog" aria-labelledby="chatModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="chatModalLabel">Chat with us</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="chatContainer"></div>
+        <div class="chat-input-container">
+          <input type="text" id="chatInput" class="chat-input" placeholder="Type your message..." autocomplete="off">
+          <div class="send-button">
+            <button id="sendButton" class="btn btn-primary">Send</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add the rating section -->
+<div class="rating-section">
+  <h2 class="rating-title">Rate your experience</h2>
+  <form id="ratingForm">
+    <input type="radio" id="rating5" name="rating" value="5" class="rating-input">
+    <label for="rating5" class="rating-label">&#9734;</label>
+    <input type="radio" id="rating4" name="rating" value="4" class="rating-input">
+    <label for="rating4" class="rating-label">&#9734;</label>
+    <input type="radio" id="rating3" name="rating" value="3" class="rating-input">
+    <label for="rating3" class="rating-label">&#9734;</label>
+    <input type="radio" id="rating2" name="rating" value="2" class="rating-input">
+    <label for="rating2" class="rating-label">&#9734;</label>
+    <input type="radio" id="rating1" name="rating" value="1" class="rating-input">
+    <label for="rating1" class="rating-label">&#9734;</label>
+    <textarea id="ratingComment" class="rating-comment" placeholder="Leave a comment (optional)"></textarea>
+    <div class="submit-rating">
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+  </form>
+</div>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<script src="script.js" type="module"></script>
+
+
+</body>
+</html>

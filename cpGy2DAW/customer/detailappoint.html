@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+  <head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.css">
+    <meta charset="UTF-8">
+    <title>Appointment Details</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      /* Add some basic styles to make the page look nicer */
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        max-width: 600px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffff;
+        border: 1px solid #cccccc;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 20px;
+      }
+      th, td {
+        padding: 10px;
+        text-align: left;
+        border-bottom: 1px solid #cccccc;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+      h1 {
+        text-align: center;
+        margin-top: 20px;
+      }
+      p {
+        text-align: center;
+        margin-top: 20px;
+      }
+      button {
+        display: block;
+        margin: 0 auto;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #ffffff;
+        border: none;
+        cursor: pointer;
+      }
+      /* Responsive styles */
+      @media screen and (max-width: 600px) {
+        .container {
+          margin: 20px;
+          padding: 10px;
+        }
+        table {
+          font-size: 14px;
+        }
+        th, td {
+          padding: 5px;
+        }
+        h1 {
+          font-size: 24px;
+        }
+      }<link rel = "manifest" href = "../site.webmanifest
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Appointment Details</h1>
+      <table id="output">
+        <tr>
+          <th>Field</th>
+          <th>Value</th>
+        </tr>
+        <tr>
+          <td>Car Wash Centre</td>
+          <td id="centre"></td>
+        </tr>
+        <tr>
+          <td>Date</td>
+          <td id="date"></td>
+        </tr>
+        <tr>
+          <td>Time</td>
+          <td id="time"></td>
+        </tr>
+        <tr>
+          <td>Add-on Services</td>
+          <td id="addons"></td>
+        </tr>
+      </table>
+             <p><button id="cancel">Cancel Appointment</button></p>
+      <p><button id="submits">HISTORY</button></p>
+
+    </div>
+    
+    <script src="detailappoint.js" type="module"></script>
+  </body>
+</html>
